@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Kadai2HowOldAreYou3 {
+    // エントリーポイント
     public static void main(String[] args) { 
 
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -16,13 +17,18 @@ public class Kadai2HowOldAreYou3 {
 			System.out.println("何歳ですか?");
 			String line = reader.readLine();
 			int age = Integer.parseInt(line);
-            while(age >= 120 || age < 0){
+
+            while(age >= 120 || age < 0){ // 年齢が範囲外のときのためのループ
                 System.out.println("あなたの年齢をもう一度入力してください。");
                 line = reader.readLine();
 			    age = Integer.parseInt(line);
             }
+
+            // 出力
 			System.out.println("あなたは" + age + "歳ですね。");
 			System.out.println("あなたは2030年、" + (age + 6) + "歳ですね。");
+
+            // 年齢による条件分岐
             if(age >=112){
                 System.out.println("あなたの生まれた元号は明治です。");
             }
