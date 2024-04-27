@@ -2,16 +2,19 @@ import java.util.Scanner;
 
 public class MyExceptionHoliday{
     public static void main(String[] args){
+
+        MyExceptionHoliday myEH = new MyExceptionHoliday();
+
         try{
             while(true){
-                holidayCheck();
+                myEH.holidayCheck();
             }
         }catch(NoHolidayException e){
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
-    public static void holidayCheck() throws NoHolidayException{
+    public void holidayCheck() throws NoHolidayException{
         Scanner scan = new Scanner(System.in);
         int date = 0;
         System.out.println("5月の日付を入力してください");
@@ -24,7 +27,7 @@ public class MyExceptionHoliday{
         if(date % 7 == 5 || date % 7 == 4 || date == 3 || date == 6){
             System.out.println("休日");
         }else{
-            throw new NoHolidayException("NoHoliday");
+            throw new NoHolidayException();
         }
 
     }

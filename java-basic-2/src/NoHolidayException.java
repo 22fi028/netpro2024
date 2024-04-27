@@ -1,9 +1,8 @@
 public class NoHolidayException extends Exception{
-    // warningを防ぐための宣言
-    private static final long serialVersionUID = 1L;
-
-    // コンストラクタ
-    public NoHolidayException(String msg){
-        super(msg);
+    
+    @Override
+    public void printStackTrace() {
+        super.printStackTrace();
+        System.err.println("NoHoliday!");
     }
 }
