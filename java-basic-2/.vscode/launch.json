@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PrimeCheck",
+            "request": "launch",
+            "mainClass": "PrimeCheck",
+            "projectName": "java-basic-2_a9e16592"
+        },
+        {
+            "type": "java",
             "name": "LoopAdvance",
             "request": "launch",
             "mainClass": "LoopAdvance",
