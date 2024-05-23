@@ -27,21 +27,24 @@ public class TaskServerWhile {
             while (loop) {
                 TaskObject obj = (TaskObject) ois.readObject();// Integerクラスでキャスト。
 
+                // xが1以下ならループを抜ける
                 if (obj.getX() <= 1) {
                     loop = false;
 
                 }
+
+                // 計算をする
                 if (loop) {
                     obj.exec();
-
                     oos.writeObject(obj);
                     oos.flush();
                 }
             }
-            // close処理
 
+            // close処理
             ois.close();
             oos.close();
+
             // socketの終了。
             socket.close();
             server.close();

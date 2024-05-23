@@ -25,15 +25,14 @@ public class TaskServerOnce {
 
             TaskObject obj = (TaskObject) ois.readObject();// Integerクラスでキャスト。
 
-            obj.exec();
+            obj.exec(); // 計算する
 
+            // アウトプット
             ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-
             oos.writeObject(obj);
             oos.flush();
 
             // close処理
-
             ois.close();
             oos.close();
             // socketの終了。

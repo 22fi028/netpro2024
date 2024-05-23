@@ -8,39 +8,42 @@ public class TaskClientWhile {
 
     public static void main(String[] arg) {
         try {
+            /* 通信の準備をする */
             Scanner scanner = new Scanner(System.in);
             System.out.print("ポートを入力してください(5000など) → ");
             int port = scanner.nextInt();
             System.out.println("localhostの" + port + "番ポートに接続を要求します");
             Socket socket = new Socket("localhost", port);
             System.out.println("接続されました");
-
             System.out.println("計算させます。");
             ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
             ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
-            boolean loop = true;
+            boolean loop = true; // ループ用のブーリアン型変数
 
             while (loop) {
                 System.out.println("数字を入力してください↓");
                 int x = scanner.nextInt();
+
+                // 1以下ならループから抜ける
                 if (x <= 1) {
                     loop = false;
                     System.out.println("終了します。");
                 }
+
+                // xに格納
                 TaskObject obj = new TaskObject();
                 obj.setExecNumber(x);
 
+                // サーバーに計算させる
                 if (loop) {
                     oos.writeObject(obj);
                     oos.flush();
-
                     TaskObject returnObj = (TaskObject) ois.readObject();
-
                     System.out.println("最大素数は" + returnObj.getResult() + "です。");
                 }
-
             }
 
+            // close処理
             ois.close();
             oos.close();
             socket.close();
