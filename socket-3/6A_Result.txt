@@ -1,0 +1,14 @@
+C:\Users\ryuki\Desktop\netpro2024\socket-3> cmd /C "C:\Users\ryuki\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\java\21\bin\java.exe -XX:+ShowCodeDetailsInExceptionMessages -cp C:\Users\ryuki\Desktop\netpro2024\socket-3\bin UDPClient "
+送信メッセージを入力してください: abc
+送ったメッセージ: abc
+サーバからの返信: ABC
+送信メッセージを入力してください: def
+送ったメッセージ: def
+サーバからの返信: DEF
+送信メッセージを入力してください: ghi
+送ったメッセージ: ghi
+サーバからの返信: GHI
+送信メッセージを入力してください: jkl
+送ったメッセージ: jkl
+サーバからの返信: JKL
+送信メッセージを入力してください: 
