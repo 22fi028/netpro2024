@@ -42,7 +42,7 @@ public class FacesAWTMain {
         public void paint(Graphics g) {
             // この中には、g.drawLine というのは入ってこない
             // Graphicsクラス(型のようなもの---今は--)のgという変数はメソッドに渡す
-            private FaceObj[] fobj = new FaceObj[9];
+            FaceObj[] fobj = new FaceObj[9];
             int count = 0;
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {

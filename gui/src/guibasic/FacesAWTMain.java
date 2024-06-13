@@ -1,3 +1,5 @@
+package guibasic;
+
 import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Graphics;
@@ -26,8 +28,6 @@ public class FacesAWTMain {
 
         private int w = 200;
         private int h = 200;
-        private int xStart;
-        private int yStart;
 
         FaceFrame() {
 
@@ -64,7 +64,6 @@ public class FacesAWTMain {
         int bf;
         int mr;
         int nr;
-        int re;
 
         public FaceObj(int x, int y, int w, int h, int bf, int mr, int nr) {
             this.xStart = x;
@@ -74,12 +73,11 @@ public class FacesAWTMain {
             this.bf = bf;
             this.mr = mr;
             this.nr = nr;
-            this.re = re;
         }
 
-        public int getXStart(){
-            return this.xStart;
-        }
+        // public int getXStart(){
+        //     return this.xStart;
+        // }
 
         public void drawFace(Graphics g) {
             
@@ -116,8 +114,6 @@ public class FacesAWTMain {
         }
 
         public void drawMouth(Graphics g, int mr) { // mrは口の幅
-            int xMiddle = xStart + w / 2;
-            int yMiddle = yStart + h - 30;
             g.drawOval(xStart + w / 2 - mr / 2, yStart + 150, mr, mr * 1 / 2);
         }
 
